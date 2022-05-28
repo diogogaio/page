@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+
+    background-color: lightblue;
+    height: 100px;
+    border-bottom: 5px solid lightgrey;
+}
+
+header h2 {
+    text-align: center;
+    padding: 10px;
+}
+
+/* GLOBAL */
+.pointer:hover {
+    cursor: pointer;
+}
+
+body {
+    display: flex;
+    /* melhora mas n resolve problema de centralização da tela (foi resolvido gerando mais espaço para o container do main e com justify-items*/
+    font-family: 'Lato', sans-serif;
+}
+
+main {
+    display: grid;
+    position: absolute;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100vw;
+    height: 100vh;
+    justify-items: center;
+}
+
+.border {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #202A61;
+    border-radius: 10px;
+    width: 300px;
+    height: 540px;
+    margin: 20px auto;
+    align-items: center;
+    background-color: #495FE0;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.228);
+}
+
+.screen {
+    width: 286px;
+    height: 510px;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.text-box {
+    margin-top: 10px;
+    line-height: 3em;
+    width: 90%;
+    border-radius: 10px;
+    border-color: white;
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    padding: 5px;
+}
+
+::placeholder {
+    color: white;
+    padding-left: 5px;
+    opacity: 0.6;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.back-btn {
+    padding: 10px;
+    align-self: flex-start;
+}
+
+button {
+    padding: 10px;
+    width: 50%;
+    background-color: #919DE6;
+    margin-top: 15px;
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    color: white;
+    text-shadow: 1px 1px 6px #495FE0;
+}
+
+.light-text {
+    opacity: 0.6;
+    font-style: italic;
+}
+
+/* TRANSITIONS */
+.opacity-none {
+    opacity: 0;
+    z-index: 0;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.8s;
+    z-index: 1000;
+}
+
+/* FIRST SCREEN */
+.fa-magnifying-glass {
+    position: absolute;
+    top: 43px;
+    left: 35px;
+    font-size: 1rem;
+    opacity: 0.5;
+}
+
+.fa-circle-x {
+    margin-right: 5px;
+    font-size: 1rem;
+}
+
+#clear-text {
+    position: absolute;
+    top: 42px;
+    left: 240px;
+    opacity: 0.5;
+}
+
+#clear-text:hover {
+    opacity: 1;
+}
+
+.new-contact {
+    width: 80%;
+    color: #495FE0;
+}
+
+div .contact-list {
+    margin-top: 15px;
+    overflow: auto;
+    height: 88%;
+    width: 70%;
+}
+/* width */
+div .contact-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+div .contact-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Handle */
+div .contact-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.132);
+}
+
+/* Handle on hover */
+div .contact-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.288);
+}
+
+#list {
+    margin-top: 15px;
+}
+
+ul li {
+    text-align: left;
+    list-style: none;
+    margin-top: 10px;
+}
+
+.content-one {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    height: 89%;
+}
+
+/* SECOND SCREEN */
+.style-two {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-form {
+    height: 53%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* THIRD SCREEN */
+.style-three {
+    display: flex;
+    flex-direction: column;
+}
+
+.selected-contact {
+    /* aplying on fourth screen ass well */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90%;
+    justify-content: space-evenly;
+}
+
+.edit-btn {
+    align-self: flex-end;
+    padding-right: 10px;
+}
+
+/* FOURTH SCREEN */
+
+.style-four {
+    display: flex;
+    flex-direction: column;
+}
+
+/* OVERLAPING SCREEN */
+.screen-one {
+    /* display: none; */
+    position: absolute;
+    z-index: 1;
+}
+
+.screen-two {
+    position: absolute;
+}
+
+.screen-three {
+    position: absolute;
+}
+
+.screen-four {
+    position: absolute;
+}
+
+#saved-contact {
+    display: none;
+    font-style: italic;
+    opacity: 0.8;
+    position: absolute;
+    text-align: center;
+    margin-top: 430px;
+    background-color: #919ce642;
+    width: 150px;
+    line-height: 30px;
+    color: white;
+    border-radius: 50px;
+    z-index: 1100;
+}
+
+/* COPYRIGHTS */
+
+#COPYRIGHTS {
+    position: absolute;
+    margin: 10px;
+}

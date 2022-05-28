@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone-book</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/c929a1af7c.js" crossorigin="anonymous"></script>
+    
+</head>
+
+<body>
+    <!-- <header>
+        <h2>Phone-Book</h2>
+    </header> -->
+    <main>
+        <!-- Main -->
+        <!--FIRST SCREEN-->
+        <i class="fa-light fa-circle-x"></i>
+        <div class="border screen-one">
+            <div class="screen black">
+                <div class="screen screen-inner-one style-one">
+                    <label for="text-box"><i class="fa-solid fa-magnifying-glass"></i></label><input class="text-box" type="text" name="search" id="search"><label id="clear-text"><i class="fa-solid fa-circle-xmark pointer"></i></label>
+                    <div class="content-one">
+                        <div class="new-contact pointer"><span><i class="fa-solid fa-user-plus"></i></span> <span>Adicionar contato</span></div>
+                        <div class="contact-list">
+                            <ul class="pointer" id="list">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECOND SCREEN -->
+        <div class="border screen-two">
+            <div class="screen screen-inner-two style-two opacity-none">
+                <div class="back-btn pointer" id="back-btn-two"><i class="fa-solid fa-arrow-left"></i></div>
+                <div>
+                    <h3>Criar Contato</h3>
+                </div>
+                <div class="add-form">
+                    <input class="text-box name-input" type="text" name="name" id="name" placeholder="Nome">
+                    <input class="text-box last-name" type="text" name="sobrenome" id="sobrenome"
+                        placeholder="Sobrenome">
+                    <input class="text-box phone-number" type="text" name="telefone" id="telefone"
+                        placeholder="Telefone">
+                    <button class="save-btn pointer">Salvar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- THIRD SCREEN -->
+        <div class="border screen-three">
+            <div class="screen screen-inner-three style-three opacity-none">
+                <div class="back-btn pointer" id="back-btn-three"><i class="fa-solid fa-arrow-left"></i></div>
+                <div class="edit-btn"><i class="fa-solid fa-pencil pointer"></i></div>
+                <div class="selected-contact">
+                    <div>
+                        <h3 class="text-format" id="contact-name">Diogo Gaio</h3>
+                    </div>
+                    <div>
+                        <h2 class="text-format" id="contact-number">9 96866 - 9192</h2><span class="light-text">Celular</span>
+                    </div>
+                    <button class="delete-btn pointer">Apagar Contato</button>
+                    <div class="contact-id"></div>
+                    <!-- DIV CREATED JUST TO STORE CONTACT INDEX IN ARRAY TO BE MANIPULATED LATER ON IF NEEDED -->
+                </div>
+            </div>
+        </div>
+
+        <!-- FOURTH SCREEN -->
+        <div class="border screen-four">
+            <div class="screen screen-inner-four style-four opacity-none">
+                <div class="back-btn pointer" id="back-btn-four"><i class="fa-solid fa-arrow-left"></i></div>
+                <div class="edit-icon"></div>
+                <div>
+                    <h3>Editar Contato</h3>
+                </div>
+                <div class="add-form .selected-contact">
+                    <input class="text-box" id="fname-input-four" type="text" name="name" id="name">
+                    <input class="text-box" id="lname-input-four" type="text" name="sobrenome" id="sobrenome-four">
+                    <input class="text-box" id="phone-number-four" type="text" name="telefone" id="telefone-four">
+                    <button class="save-btn pointer" id="save-btn-four">Salvar</button>
+                </div>
+            </div>
+        </div>
+        <div id="copyrights">Desenvolvido por GaioD&copy;</div>
+
+        <div id="saved-contact">
+            <span>Contato Salvo !</span>
+        </div>
+        
+
+
+    </main>
+
+</body>
+
+</html>

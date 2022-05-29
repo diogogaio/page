@@ -88,9 +88,9 @@ body {
     border: 2px solid black;
 }
 
-button:hover {
+button:hover, button:active {
 
-    background-color: rgb(164, 164, 238);
+    background-color: #816CFB;
     color: black;
 }
 

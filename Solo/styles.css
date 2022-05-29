@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif
+
+}
+body {
+    background-color: #20256B;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.wrapper {
+    margin: 30px auto;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 80vw;
+    height: 60vh;
+    background-color: white;
+    border-radius: 10px;
+    color: #40436B;
+    box-shadow: 3px 3px black;
+
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    height: 10vh;
+    justify-content: space-between;
+}
+
+.logo h1 {
+    text-shadow: 1px 1px black;
+}
+
+section {
+    padding: 40px 20px;
+    width: 100%;
+    align-items: center;
+}
+
+ul li {
+    text-align: left;
+    padding: 10px;
+    list-style: none;
+    margin-bottom: 10px
+}
+
+ul li a {
+    color: #4751EB;
+    text-decoration: none;
+}
+ul li a:hover {
+    color: #20256B;
+}
+ul li i {
+    padding-right: 10px;
+    font-size: 1.2rem;
+}
+
+.github a {
+    color: rgba(255, 255, 255, 0.721);
+    font-style: italic;
+}
+.fa-github {
+    padding-right: 5px;
+}
+.fa-address-book {
+    font-size: 1.0rem;
+}
+.fa-file-invoice-dollar {
+    font-size: 1.1rem;
+}
+
+@media screen and (min-width: 768px) {
+
+.wrapper {
+    max-width: 630px;
+}
+}

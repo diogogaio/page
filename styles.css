@@ -68,7 +68,7 @@ ul li i {
 }
 
 .github a {
-    color: rgba(255, 255, 255, 0.721);
+    color: white;
     font-style: italic;
 }
 .fa-github {
@@ -79,6 +79,10 @@ ul li i {
 }
 .fa-file-invoice-dollar {
     font-size: 1.1rem;
+}
+.copy{
+    font-style: italic;
+    font-family: 'Lato', sans-serif;
 }
 
 @media screen and (min-width: 768px) {

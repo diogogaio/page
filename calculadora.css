@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif
+}
+
+header {
+
+    background-color: #20256B;
+    height: 100px;
+    width: 100vw;
+    line-height: 90px;
+    border-bottom: 5px solid lightgrey;
+}
+
+header h2 {
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+body {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.calculator {
+    background: #20256B;
+    border-radius: 5px;
+    width: 400px;
+    margin: 40px;
+    padding: 20px;
+}
+
+.preview {
+    background-color: black;
+    color: rgba(190, 190, 240, 0.525);
+
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 1.3em;
+    padding: 5px 5px;
+    font: normal 1.5rem serif;
+
+}
+
+#display {
+    background-color: black;
+    color: white;
+
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 90px;
+    margin: 0px 0px 15px;
+    padding: 0px 5px 0px;
+    font: normal 4rem serif;
+    /* overflow: hidden; */
+    /* BUG - resultados grandes  serão omitidos*/
+
+}
+
+.buttons {
+    background: 20256B;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* *** */
+    grid-gap: 10px;
+}
+
+.calculator button {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 1px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+
+    outline: none;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+button:hover {
+
+    background-color: rgb(164, 164, 238);
+    color: black;
+}
+
+button:active {
+
+    background-color: rgb(164, 164, 238);
+    color: black;
+}
+.home-page {
+    margin-bottom: 10px;
+    font-style: italic;
+}
+/* FOOTER */
+
+footer {
+    text-align: center;
+    background-color: #20256B;
+    width: 100vw;
+    height: 200px;
+    color: black;
+    z-index: 10000;
+    padding: 10px;
+    color: white;
+    font-style: italic;
+}
+footer a {
+    color: white;
+    font-style: italic;
+}
+
+footer i {
+   margin-right: 5px;
+}
+
+@media screen and (max-width: 420px) {
+
+    .calculator {
+        width:95%;
+        height: 90%
+    }
+}

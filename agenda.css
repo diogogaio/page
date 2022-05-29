@@ -73,8 +73,8 @@ main {
     margin-top: 10px;
     line-height: 3em;
     width: 90%;
-    border-radius: 10px;
-    border-color: white;
+    border-radius: 15px;
+    border: 2px solid white;
     color: white;
     background-color: black;
     font-weight: bold;

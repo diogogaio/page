@@ -14,8 +14,7 @@ const Modal = { //esta função pode ser substituída pela função TOOGLE (pesq
 const Storage = {
     
     get() {
-        return JSON.parse(localStorage.getItem("dev.finance:transactions"))
-        || []
+        return JSON.parse(localStorage.getItem("dev.finances:transactions"))|| [];
     },
 
     set(transactions) {
@@ -74,11 +73,10 @@ const Transaction = {
 const DOM = {
     transactionsContainer: document.querySelector('#data-table tbody'), //ver informação abaixo do title no head do html
     
-    addTransaction(transaction, index) {  //ques está incando esta função NAO SEI.
+    addTransaction(transaction, index) { 
         const tr = document.createElement('tr')
         tr.innerHTML = DOM.innerHTMLtransaction(transaction, index)
-        tr.dataset.index = index  //NÃO CONSEGUIR ENCONTRAR MUITA INFORMAÇÃO SOBRE DATASET
-        //console.log(tr.innerHTML)
+        tr.dataset.index = index 
         DOM.transactionsContainer.appendChild(tr)
     },
     innerHTMLtransaction(transaction, index) {
@@ -102,13 +100,9 @@ const DOM = {
         document.getElementById('totalDisplay').innerHTML = Utils.formatCurrency(Transaction.total())
     },
     clearTransactions() {
-        DOM.transactionsContainer.innerHTML = ""
+        DOM.transactionsContainer.innerHTML = "";
     }
 }
-
-/*  regular expression with metacharacter \D - https://www.w3schools.com/jsref/jsref_regexp_digit_non.asp 
-    toLocaleString() read more in https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString ==> go down in OPTINS page
-*/
 
 const Utils = {
     formatAmount(value) {
@@ -196,11 +190,7 @@ const Form = {
 
 const App = {
     init() {
-        
-        Transaction.all.forEach(DOM.addTransaction) // pode ser usado assim ou como está abaixo
-        /* Transaction.all.forEach(function(transaction, index) {
-            DOM.addTransaction(transaction, index)
-        }) */
+        Transaction.all.forEach(DOM.addTransaction)
         
         DOM.updateBalace()
         Storage.set(Transaction.all)
@@ -212,18 +202,3 @@ const App = {
     }
 }
 App.init();
-
-
-
-/* nao conseguir encontrar o problema com a iteração continuar do 48:13 da aula*/ // UPDATE: DIA SEGUINTE COMEÇOU A FUNCIONAR ESTE FOREACH MISTERIOSAMENTE!
-
-
-/* transactions.forEach(myFunc)
-function myFunc(transaction) {
-    DOM.addTransaction(transaction)
-}
-*/
-
-/* DOM.addTransaction(transactions[0]);
-DOM.addTransaction(transactions[1]);               
-DOM.addTransaction(transactions[2]); */

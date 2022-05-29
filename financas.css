@@ -15,6 +15,9 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+
     background: #f0f2f5;
     font-family: 'Poppins', sans-serif;
 }
@@ -211,6 +214,7 @@ td.expense {
 }
 #form h2 {
     margin-top: 0px;
+    color: #4751EB !important;
 }
 #form form input {
     border: none;
@@ -234,10 +238,19 @@ td.expense {
 .input-group.actions button {
     width: 48%;
 }
+.home-page {
+    margin-top: 40px;
+    font-style: italic;
+    align-self: center;
+}
+.home-page a {
+    color: #4751EB;
+
+}
 
 /* FOOTER ======================*/
 footer {
-    padding: 4rem 0 2rem;
+    padding: 1rem 0 2rem;
     opacity: 0.6;
     text-align: center;
     

@@ -22,7 +22,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
         import { getFirestore, collection, doc, setDoc, getDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js"
-        import { GoogleAuthProvider, getAuth, signInWithRedirect, getRedirectResult } from 'https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js';
+        import { GoogleAuthProvider, getAuth, signInWithRedirect, getRedirectResult, signInWithEmailAndPassword, signInWithPopup } from 'https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js';
 
         const firebaseConfig = {
             apiKey: "AIzaSyAWYJdzrQOKi0vD0Ou4xV4PCYv_wl655Bs",
@@ -48,7 +48,7 @@
         /* authentication */
         const provider = new GoogleAuthProvider();
         const auth = getAuth();
-        signInWithRedirect(auth, provider);//domain not authorized error, try to solve it with the console
+        /* signInWithRedirect(auth, provider);//domain not authorized error, try to solve it with the console
         getRedirectResult(auth)
             .then((result) => {
                 // This gives you a Google Access Token. You can use it to access Google APIs.
@@ -57,6 +57,49 @@
 
                 // The signed-in user info.
                 const user = result.user;
+            }).catch((error) => {
+                // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // The email of the user's account used.
+                const email = error.email;
+                // The AuthCredential type that was used.
+                const credential = GoogleAuthProvider.credentialFromError(error);
+                // ...
+            }); */
+
+        /* sign in with email and pass */
+
+        /* function submit() {
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const submitBtn = document.getElementById('submitBtn');
+
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode, errorMessage)
+            });
+        }
+        submitBtn.addEventListener('click', submit) */
+
+        /* sign in with pop up */
+
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                const credential = GoogleAuthProvider.credentialFromResult(result);
+                const token = credential.accessToken;
+                // The signed-in user info.
+                const user = result.user;
+                // ...
             }).catch((error) => {
                 // Handle Errors here.
                 const errorCode = error.code;
@@ -428,6 +471,10 @@
     </main>
     <p>Adicione contatos, a agenda vem vazia, quando você voltar eles continuarão aqui.</p><br>
     <div class="home-page"><a href="https://diogogaio.github.io/page/index.html">Voltar pagina inicial</a></div>
+    <label for="email">Email</label><input type="text" id="email">
+    <label for="senha">Senha</label><input type="text" id="password">
+    <button id="submitBtn">log in</button>
+
     <footer>
         <div class="copy">Desenvolvido por Diogo Gaio&copy;</div><br>
         <div class="github"><i class="fa-brands fa-github"></i><a target="_blank"

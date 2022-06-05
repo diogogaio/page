@@ -19,7 +19,7 @@
 <body>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
-        import { getFirestore, onSnapshot, collection, doc, setDoc, getDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js"
+        import { getFirestore, collection, doc, setDoc, getDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js"
 
         const firebaseConfig = {
             apiKey: "AIzaSyAWYJdzrQOKi0vD0Ou4xV4PCYv_wl655Bs",
@@ -45,6 +45,7 @@
             console.log("No such document!");
         }
         
+
 
         // the app code:
 
@@ -162,7 +163,6 @@ console.log(contactsDb);
         console.log("setado", contactsDb);
         /* localStorage.setItem('contactsDb', JSON.stringify(contactsDb)) */;
          setDoc(doc(db, "agenda", "contacts"), {contactsDb});
-         const unsub = onSnapshot(doc(db, "agenda", "contacts"), Display.contactList())
     },
 
     submit() {

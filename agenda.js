@@ -1,5 +1,4 @@
 'use strict'
-
 // are you sure you want to delete contact confirmation
 // add confirmation boxes after edited and saved buttons clicked
 //make span reads if celular or home for exemple
@@ -100,7 +99,8 @@ backBtnFour.addEventListener('click', Navigate.backBtnFour)
 /* STORAGE */ const Storage = {
 
     getDataBase() {
-        return JSON.parse(localStorage.getItem('contactsDb')) ?? []; ///no exemplo do fernando leonid (task list) não precisou usar 'return' function
+        
+        return content.data().contactsDb ?? []; 
     }
 }
 const contactsDb = Storage.getDataBase();
@@ -109,8 +109,9 @@ console.log(contactsDb);
 /* SAVING */ const Saving = {
 
     setContactDataB(contactsDb) {
-
-        localStorage.setItem('contactsDb', JSON.stringify(contactsDb));
+        console.log("setado", contactsDb);
+        /* localStorage.setItem('contactsDb', JSON.stringify(contactsDb)) */;
+         setDoc(doc(db, "agenda", "contacts"), {contactsDb});
     },
 
     submit() {

@@ -22,7 +22,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
         import { getFirestore, collection, doc, setDoc, getDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js"
-        import { GoogleAuthProvider, getAuth, signInWithRedirect, getRedirectResult, signInWithEmailAndPassword, signInWithPopup } from 'https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js';
+        import { GoogleAuthProvider, getAuth, onAuthStateChanged, signInWithRedirect, getRedirectResult, signInWithEmailAndPassword, signInWithPopup, signOut } from 'https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js';
 
         const firebaseConfig = {
             apiKey: "AIzaSyAWYJdzrQOKi0vD0Ou4xV4PCYv_wl655Bs",
@@ -36,18 +36,14 @@
 
         /* ---GET DATA--- */
         const db = getFirestore();
+        const auth = getAuth();
+
         const myDb = doc(db, "agenda", "contacts");
         const content = await getDoc(myDb);
 
-        if (content.exists()) {
-            console.log("Document data:", content.data().contactsDb);
-        } else {
-            // doc.data() will be undefined in this case
-            console.log("No such document!");
-        }
         /* authentication */
-        const provider = new GoogleAuthProvider();
-        const auth = getAuth();
+
+        //const provider = new GoogleAuthProvider();
         /* signInWithRedirect(auth, provider);//domain not authorized error, try to solve it with the console
         getRedirectResult(auth)
             .then((result) => {
@@ -69,30 +65,66 @@
             }); */
 
         /* sign in with email and pass */
+        function submit() {
 
-        /* function submit() {
-
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+            const email = document.getElementById('email');
+            const password = document.getElementById('password');
             const submitBtn = document.getElementById('submitBtn');
 
-        signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                // Signed in
-                const user = userCredential.user;
-                // ...
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(errorCode, errorMessage)
+            signInWithEmailAndPassword(auth, email.value, password.value)
+                .then((userCredential) => {
+                    // Signed in
+                    const user = userCredential.user;
+                    console.log(user.uid)
+                    alert('logado com suceso')
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert('falha no login')
+                    console.log(errorCode, errorMessage)
+                });
+            email.value = "";
+            password.value = "";
+        }
+        submitBtn.addEventListener('click', submit)
+
+        function estaLogado() {
+
+            onAuthStateChanged(auth, (user) => {
+
+                if (user) {
+
+                    console.log('logado como: ', user.email)
+                } else {
+                    console.log('ninguem logado')
+                }
             });
         }
-        submitBtn.addEventListener('click', submit) */
+        estaLogado();
+
+        function logOut() {
+            signOut(auth).then(() => {
+                console.log('Deslogado com sucesso')
+            }).catch((error) => {
+                console.log('Falha ao deslogar')
+            });
+        }
+        /* logOut(); */
+
+        /*  function getUserInfo() {
+ 
+             setTimeout(() => {
+                 const user = auth.currentUser;
+                 const email = user.email;
+                 return email
+             }, 2000)
+ 
+         } */
 
         /* sign in with pop up */
 
-        signInWithPopup(auth, provider)
+        /* signInWithPopup(auth, provider)
             .then((result) => {
                 // This gives you a Google Access Token. You can use it to access the Google API.
                 const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -109,12 +141,14 @@
                 // The AuthCredential type that was used.
                 const credential = GoogleAuthProvider.credentialFromError(error);
                 // ...
-            });
+            }); */
+
 
 
         // the app code starts below:
 
         'use strict'
+
         // are you sure you want to delete contact confirmation
         // add confirmation boxes after edited and saved buttons clicked
         //make span reads if celular or home for exemple
@@ -152,6 +186,7 @@
         const savedPopUp = document.getElementById('saved-contact');
         const deletedPopUp = document.getElementById('deleted-contact');
         const magnifyIcon = document.querySelector('.fa-magnifying-glass');
+
 
 /* NAVIGATE */ const Navigate = {
 
@@ -216,7 +251,17 @@
 
             getDataBase() {
 
-                return content.data().contactsDb ?? [];
+                if (content.exists()) {
+
+                    return content.data().contactsDb
+                } else {
+
+                    return [];
+                    // doc.data() will be undefined in this case
+                    console.log("Returning empty db");
+                }
+
+                /* return content.data().contactsDb ?? []; */
             }
         }
         const contactsDb = Storage.getDataBase();
@@ -225,22 +270,36 @@
 /* SAVING */ const Saving = {
 
             setContactDataB(contactsDb) {
-                console.log("setado", contactsDb);
-        /* localStorage.setItem('contactsDb', JSON.stringify(contactsDb)) */;
-                setDoc(doc(db, "agenda", "contacts"), { contactsDb });
+
+
+                setDoc(doc(db, "agenda", "contacts"), { contactsDb }).then(doc => {
+
+
+                }).catch(error => {
+                    if (error.code == 'permission-denied') {
+                        console.log(error)
+                        alert('Erro: USUÁRIO NÃO LOGADO, INFORMÇÕES FORAM SALVAS LOCALMENTE APENAS!')
+                    } else {
+                        console.error(error)
+                        alert('Erro: NÃO É POSSÍVEL SALVAR')
+                    }
+                })
+
+
+                /* localStorage.setItem('contactsDb', JSON.stringify(contactsDb)) */;
             },
 
             submit() {
                 const contactData = { "fname": nameInput.value, "lname": lastName.value, "phoneNumber": phoneNumber.value };
-
+                Navigate.showPageThree();
+                PopUps.saved();
                 contactsDb.push(contactData);
                 Saving.setContactDataB(contactsDb);
                 console.log(contactsDb)
 
                 Display.contactList();
                 ContactPage.pageContent();
-                Navigate.showPageThree();
-                PopUps.saved();
+
                 nameInput.value = '';
                 lastName.value = '';
                 phoneNumber.value = '';
@@ -470,10 +529,10 @@
         </div>
     </main>
     <p>Adicione contatos, a agenda vem vazia, quando você voltar eles continuarão aqui.</p><br>
-    <div class="home-page"><a href="https://diogogaio.github.io/page/index.html">Voltar pagina inicial</a></div>
+    <div class="home-page"><a href="https://diogogaio.github.io/page/index.html">Voltar pagina inicial</a></div><br>
     <label for="email">Email</label><input type="text" id="email">
     <label for="senha">Senha</label><input type="text" id="password">
-    <button id="submitBtn">log in</button>
+    <button style="width:10%" id="submitBtn">Log in</button><br>
 
     <footer>
         <div class="copy">Desenvolvido por Diogo Gaio&copy;</div><br>

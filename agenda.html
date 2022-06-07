@@ -271,7 +271,6 @@
 
             setContactDataB(contactsDb) {
 
-
                 setDoc(doc(db, "agenda", "contacts"), { contactsDb }).then(doc => {
 
 
@@ -284,8 +283,6 @@
                         alert('Erro: NÃO É POSSÍVEL SALVAR')
                     }
                 })
-
-
                 /* localStorage.setItem('contactsDb', JSON.stringify(contactsDb)) */;
             },
 

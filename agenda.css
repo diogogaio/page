@@ -105,6 +105,11 @@ button {
     color: white;
     text-shadow: 1px 1px 6px #495FE0;
 }
+#submitBtn {
+    width: 120px;
+
+}
+
 
 .light-text {
     opacity: 0.6;

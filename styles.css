@@ -43,9 +43,24 @@ body {
 }
 
 section {
-    padding: 40px 20px;
     width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    
+    
+}
+
+nav {
+    height: 70%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    
 }
 
 ul li {
@@ -55,16 +70,23 @@ ul li {
     margin-bottom: 10px
 }
 
-ul li a {
+.li-item a {
     color: #4751EB;
     text-decoration: none;
 }
-ul li a:hover {
+.li-item a:hover {
     color: #20256B;
 }
-ul li i {
+.li-item i {
     padding-right: 10px;
     font-size: 1.2rem;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .github a {
@@ -88,6 +110,12 @@ ul li i {
 @media screen and (min-width: 768px) {
 
 .wrapper {
-    max-width: 630px;
+    max-width: 70%;
 }
+nav {
+    flex-direction: row;
+    width: 85%;
+    align-items: center;
+}
+
 }

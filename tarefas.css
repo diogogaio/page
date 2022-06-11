@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+
+    height: 100%;
+}
+
+header {
+
+    background-color: #20256B;
+    height: 100px;
+    width: 100vw;
+    line-height: 90px;
+    border-bottom: 5px solid lightgrey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+header h2 {
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+body {
+    background-color: lightgray;
+    font: bold 2rem 'Open Sans', sans-serif;
+    height: 100%;
+
+}
+
+#container {
+
+    display: flex;
+    background-color: white;
+    width: 90vw;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    gap: 15px;
+   
+}
+
+#title {
+
+    display: flex;
+    background-color: #816CFB;
+    width: 100%;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    box-shadow: 1px 1px 5px;
+    font-size: 120%;
+    font-weight: bold;
+
+}
+
+#list {
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    background-color: white;
+   
+}
+
+.listItem {
+
+    display: flex;
+    width: 100%;
+    height: 60px;
+    justify-content:space-between;
+    align-items:center;
+    padding: 5px;  
+    box-shadow: 1px 1px 5px;
+    background-color: #816cfb77; 
+}
+
+.listItem > div {
+
+    width: 90%;
+    padding-left: 5px;
+    /* background-color: red */
+}
+
+.listItem:hover {
+
+    cursor: pointer;
+    transition: all .5s ease;
+    background-color: rgb(168, 165, 165);
+    color: rgb(89, 0, 255);
+}
+
+.listItem > input[type='text'] {
+
+    border: none;
+    width: 80%;
+    background-color: red;
+    font: inherit;
+}
+
+    .listItem > input[type='button'],
+    .listItem > input[type='checkbox'] {
+
+        width: 30px;
+        height: 30px;
+        font: inherit;
+}
+
+#newTask {
+    display: flex;
+    background-color: rgb(192, 190, 190);
+    width: 100%;
+    height: 70px;
+    justify-content: space-evenly;
+    padding: 10px 0;    
+    box-shadow: 1px 1px 5px;
+    margin: 10px;
+    font: inherit;
+}
+
+#newTask > input {
+
+    background-color: lightgray;
+    border: none;
+    width: 80%;
+    outline: none;
+    font: inherit;
+}
+
+#newTask > input::placeholder {
+
+    font-style: italic;
+    font-weight: normal;
+    padding-left: 5px;
+}
+.home-page {
+    margin-bottom: 10px;
+    font-style: italic;
+}
+/* FOOTER */
+
+footer {
+    text-align: center;
+    background-color: #20256B;
+    width: 100vw;
+    height: 20vh;
+    color: black;
+    z-index: 10000;
+    padding: 10px;
+    color: white;
+    font-style: italic;
+}
+footer a {
+    color: white;
+    font-style: italic;
+}
+
+footer i {
+   margin-right: 5px;
+}
+@media screen and (min-width: 900px) {
+    #container {
+        max-width: 800px;
+    }
+}

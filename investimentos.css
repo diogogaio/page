@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.colors {
+   color: #6C00C4;
+   color: #DA57F7;
+   color: #4DF719;
+   color: #499165;
+   color: #00C44B;
+}
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+.main {
+    background-color: #499165;
+}
+body {
+    background-color: #499165;
+}
+.card {
+    border-color: #6C00C4 !important;
+    margin-bottom: 5px; /* ADD TO BOOTSTRAP LATER */
+}
+.invested-amount {
+    background-color: #00C44B
+}
+.total-invested-amount {
+    background-color: #DA57F7
+}
+.rendimentos-amount {
+    background-color: #4DF719;
+}
+.inner-container {
+    padding: 5px;
+}
+
+/* responsiveness */
+
+@media screen and (min-width: 700px) {
+
+}
+
+/* Resgatados */
+
+.end-date {
+   padding-top: 42px 
+}
+
+/* Modal Main */
+.modal-title {
+    color: #499165;
+}
+.baixado {
+    opacity: 0.7;
+    background-color: gray;
+}
+
+

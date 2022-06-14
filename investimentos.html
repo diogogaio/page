@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/c929a1af7c.js" crossorigin="anonymous"></script>
+    <title>Investimentos</title>
+    <!-- <link rel="stylesheet" href="/styles.css"> -->
+    <link rel="stylesheet" href="https://diogogaio.github.io/page/investimentos.css">
+</head>
+<header class="container-xl d-flex flex-column p-0">
+    <div class="align-self-center">
+        <div class="logo m-4 text-light text-center">
+            <h2><em>Check Invest</em></h2><small class="text-white-50"><em>Controle Investimentos</em></small>
+        </div>
+    </div>
+
+    <!-- TOTALS CARD -->
+
+
+    <!-- CARDs -->
+
+    <!-- CARD MENU -->
+    <!--             <div class="container dropdown text-start">
+                <button class="btn card-menu ps-0" data-bs-toggle="dropdown"><i
+                        class="fa-solid fa-ellipsis text-light"></i></button>
+                <ul class="dropdown-menu rounded-3">
+                    <li class="dropdown-item">Adicionar comentário</li>
+                    <li class="dropdown-divider">
+                        <hr> Adicionar comentário
+                    </li>
+                    <li class="dropdown-item bg-danger text-light rounded3">Dar baixa</li>
+                </ul>
+            </div> -->
+
+    <!-- TOTAL CARD CONTAINER -->
+    <div class="row container-xl mx-auto p-2 bg-light text-center" data-bs-toggle="collapse" data-bs-target="#demo">
+
+        <!-- INNER CARDS -->
+
+        <div class="col-sm-3">
+
+            <p class="text-black-50">Total patrimônio investido:</p>
+
+            <h5 class="d-inline-block total-invested-amount rounded-3 border p-2">R$ 450.000,00</h5>
+
+        </div>
+
+        <div class="col-sm-3">
+
+            <p class="text-black-50">Valor total Rendimentos:</p>
+
+            <h5 class="d-inline-block rendimentos-amount rounded-3 border p-2">R$ 35.000,00</h5>
+
+        </div>
+
+        <div class="col-sm-3">
+            <p class="text-black-50">Filtrar:</p>
+
+            <div>
+                <label for="begin-date text-black-50">De :</label><input class="ms-2 rounded-3 p-1" type="date">
+            </div>
+        </div>
+
+        <div class="col-sm-3 end-date">
+
+            <div class="">
+                <label for="end-date text-black-50">Até:</label><input class="ms-2 rounded-3 p-1" type="date">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="text-center"><span><i class="fa-solid fa-sort-down text-center text-success"></i></span>
+
+
+    </div>
+
+    <!-- END OF TOTALS CARD -->
+</header>
+
+<body>
+    <main class="main row container-xl p-1 mx-auto ">
+        <!-- Main -->
+
+        <!-- APP MENU -->
+        <div class="container dropdown text-end pe-2">
+            <button class="btn p-0" data-bs-toggle="dropdown"><i class="fa-solid fa-bars text-light h3"></i></button>
+            <!--App Menu Button  -->
+            <ul class="dropdown-menu">
+                <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#add-new-investment">Novo
+                        Investimento</a></li>
+
+                <li><a href="#" class="dropdown-item" data-bs-toggle="modal"
+                        data-bs-target="#rendimentos">Rendimentos</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a href="#" class="dropdown-item">Editar</a></li>
+            </ul>
+        </div>
+
+        <!-- CARDs -->
+
+        <!-- Card Main -->
+        <div class="col-md-4 p-2">
+            <!-- CARD -->
+            <div class="container dropdown text-start">
+                <button class="btn card-menu ps-0" data-bs-toggle="dropdown"><i
+                        class="fa-solid fa-ellipsis text-light"></i></button>
+                <ul class="dropdown-menu rounded-3">
+                    <li class="dropdown-item">Adicionar comentário</li>
+                    <li class="dropdown-divider">
+                        <hr> Adicionar comentário
+                    </li>
+                    <li class="dropdown-item bg-danger text-light rounded3">Dar baixa</li>
+                </ul>
+            </div><!-- CARD MENU -->
+            <div class="card container p-2 bg-light border border-4 rounded-3" data-bs-toggle="collapse"
+                data-bs-target="#card2">
+                <!-- collapse number -->
+                <!-- INNER CARD -->
+
+                <div class="inner-container ">
+                    <div class="description d-flex justify-content-between">
+                        <p class="text-black-50">Cdb - Lci's - Lca's</p>
+                        <p class="text-black-50">Itaú</p>
+                    </div>
+                    <div class="value d-flex justify-content-between">
+                        <h5>CDB Liquidez diária</h5>
+                        <span><i class="fa-solid fa-triangle-exclamation text-danger h4" data-bs-toggle="tooltip"
+                                title="Vencimento!"></i></span>
+                    </div>
+                </div>
+
+                <div class="inner-container f-flex flex-colum justify-content-center">
+                    <div class="description d-flex justify-content-between">
+                        <p class="text-black-50">Valor Investido:</p>
+                        <p class="text-black-50">Vencimento:</p>
+                    </div>
+                    <div class="value d-flex justify-content-between">
+                        <h5 class="invested-amount rounded-3 border p-2">R$ 35.000,00</h5>
+                        <h5 class="text-danger">25/01/2023</h5>
+                    </div>
+                    <div class="text-center"><span><i class="fa-solid fa-sort-down text-center text-success"></i></span>
+                    </div>
+                </div>
+
+                <div id="card2" class="collapse border">
+                    <!-- Collapse 2 Start -->
+
+                    <div class="inner-container">
+                        <!-- Collapse 2 End -->
+                        <div class="description d-flex justify-content-between">
+                            <p class="text-black-50">Duração:</p>
+                            <p class="text-black-50">Taxa:</p>
+                        </div>
+                        <div class="value d-flex justify-content-between">
+                            <h5>90 dias</h5>
+                            <p>107% CDI</p>
+                        </div>
+
+                        <div class="form-floating">
+                            <textarea name="text" id="comment" cols="42" rows="1" class="form"
+                                placeholder="Comentários"></textarea>
+                            <label for="comment"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD - BAIXADO -->
+        <div class="col-md-4 p-2">
+
+            <div class="container dropdown text-start">
+                <button class="btn card-menu ps-0" data-bs-toggle="dropdown"><i
+                        class="fa-solid fa-ellipsis text-light"></i></button>
+                <ul class="dropdown-menu rounded-3">
+                    <li class="dropdown-item">Adicionar comentário</li>
+                    <li class="dropdown-divider">
+                        <hr> Adicionar comentário
+                    </li>
+                    <li class="dropdown-item bg-danger text-light rounded3">Dar baixa</li>
+                </ul>
+            </div><!-- CARD MENU -->
+            <div class="card container baixado p-2 border border-4 rounded-3 text-black-50 " data-bs-toggle="collapse"
+                data-bs-target="#card1">
+                <!-- INNER CARD -->
+
+                <div class="inner-container ">
+                    <div class="description d-flex justify-content-between">
+                        <p class="text-black-50">Cdb - Lci's - Lca's</p>
+                        <p class="text-black-50">Itaú</p>
+                    </div>
+                    <div class="value d-flex justify-content-between">
+                        <h5>CDB Liquidez diária</h5>
+                        <span class="badge bg-secondary pt-2">Baixado</span>
+                    </div>
+                </div>
+
+                <div class="inner-container f-flex flex-colum justify-content-center">
+                    <div class="description d-flex justify-content-between">
+                        <p class="text-black-50">Valor Investido:</p>
+                        <p class="text-black-50">Vencimento:</p>
+                    </div>
+                    <div class="value d-flex justify-content-between">
+                        <h5 class="invested-amount rounded-3 border p-2">R$ 35.000,00</h5>
+                        <h5>25/01/2023</h5>
+                    </div>
+                    <div class="text-center"><span><i class="fa-solid fa-sort-down text-center text-success"></i></span>
+                    </div>
+                </div>
+
+                <div id="card1" class="collapse">
+                    <!-- Collapse 2 Start -->
+
+                    <div class="inner-container">
+                        <!-- Collapse 2 End -->
+                        <div class="description d-flex justify-content-between">
+                            <p class="text-black-50">Duração:</p>
+                            <p class="text-black-50">Taxa:</p>
+                        </div>
+                        <div class="value d-flex justify-content-between">
+                            <h5>90 dias</h5>
+                            <p>107% CDI</p>
+                        </div>
+
+                        <div class="form-floating">
+                            <textarea name="text" id="comment" cols="42" rows="1" class="form"
+                                placeholder="Comentários"></textarea>
+                            <label for="comment"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- END OF CARD -->
+
+        <!-- begin of clones -->
+
+        <div class="col-md-4 p-2">
+            <!-- CARD -->
+            <div class="container dropdown text-start">
+                <button class="btn card-menu ps-0" data-bs-toggle="dropdown"><i
+                        class="fa-solid fa-ellipsis text-light"></i></button>
+                <ul class="dropdown-menu rounded-3">
+                    <li class="dropdown-item">Adicionar comentário</li>
+                    <li class="dropdown-divider">
+                        <hr> Adicionar comentário
+                    </li>
+                    <li class="dropdown-item bg-danger text-light rounded3">Dar baixa</li>
+                </ul>
+            </div><!-- CARD MENU -->
+            <div class="card container p-2 bg-light border border-4 rounded-3" data-bs-toggle="collapse"
+                data-bs-target="#demo2">
+                <!-- INNER CARD -->
+
+                <div class="inner-container ">
+                    <div class="description d-flex justify-content-between">
+                        <p class="text-black-50">Cdb - Lci's - Lca's</p>
+                        <p class="text-black-50">Itaú</p>
+                    </div>
+                    <div class="value d-flex justify-content-between">
+                        <h5>CDB Liquidez diária</h5>
+                        <span><i class="fa-solid fa-triangle-exclamation text-warning h4" data-bs-toggle="tooltip"
+                                title="Vencimento!"></i></span>
+                    </div>
+                </div>
+
+                <div class="inner-container f-flex flex-colum justify-content-center">
+                    <div class="description d-flex justify-content-between">
+                        <p class="text-black-50">Valor Investido:</p>
+                        <p class="text-black-50">Vencimento:</p>
+                    </div>
+                    <div class="value d-flex justify-content-between">
+                        <h5 class="invested-amount rounded-3 border p-2">R$ 35.000,00</h5>
+                        <h5 class="text-danger">25/01/2023</h5>
+                    </div>
+                    <div class="text-center"><span><i class="fa-solid fa-sort-down text-center text-success"></i></span>
+                    </div>
+                </div>
+
+                <div id="demo2" class="collapse border">
+                    <!-- Collapse 2 Start -->
+
+                    <div class="inner-container">
+                        <!-- Collapse 2 End -->
+                        <div class="description d-flex justify-content-between">
+                            <p>Duração:</p>
+                            <p>Taxa:</p>
+                        </div>
+                        <div class="value d-flex justify-content-between">
+                            <h5>90 dias</h5>
+                            <p>107% CDI</p>
+                        </div>
+
+                        <div class="form-floating">
+                            <textarea name="text" id="comment" cols="42" rows="1" class="form"
+                                placeholder="Comentários"></textarea>
+                            <label for="comment"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 p-2">
+            <!-- CARD -->
+            <div class="container dropdown text-start">
+                <button class="btn card-menu ps-0" data-bs-toggle="dropdown"><i
+                        class="fa-solid fa-ellipsis text-light"></i></button>
+                <ul class="dropdown-menu rounded-3">
+                    <li class="dropdown-item">Adicionar comentário</li>
+                    <li class="dropdown-divider">
+                        <hr> Adicionar comentário
+                    </li>
+                    <li class="dropdown-item bg-danger text-light rounded3">Dar baixa</li>
+                </ul>
+            </div><!-- CARD MENU -->
+            <div class="card container p-2 bg-light border border-4 rounded-3" data-bs-toggle="collapse"
+                data-bs-target="#demo3">
+
+                <!-- INNER CARD -->
+                <div class="inner-container ">
+                    <div class="description d-flex justify-content-between">
+                        <p class="text-black-50">Cdb - Lci's - Lca's</p>
+                        <p class="text-black-50">Itaú</p>
+                    </div>
+                    <div class="value d-flex justify-content-between">
+                        <h5>CDB Liquidez diária</h5>
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="inner-container f-flex flex-colum justify-content-center">
+                    <div class="description d-flex justify-content-between">
+                        <p class="text-black-50">Valor Investido:</p>
+                        <p class="text-black-50">Vencimento:</p>
+                    </div>
+                    <div class="value d-flex justify-content-between">
+                        <h5 class="invested-amount rounded-3 border p-2">R$ 35.000,00</h5>
+                        <h5 class="text-black-50">25/01/2023</h5>
+                    </div>
+                    <div class="text-center"><span><i class="fa-solid fa-sort-down text-center text-success"></i></span>
+                    </div>
+                </div>
+
+                <div id="demo3" class="collapse border">
+                    <!-- Collapse 2 Start -->
+
+                    <div class="inner-container">
+                        <!-- Collapse 2 End -->
+                        <div class="description d-flex justify-content-between">
+                            <p>Duração:</p>
+                            <p>Taxa:</p>
+                        </div>
+                        <div class="value d-flex justify-content-between">
+                            <h5>90 dias</h5>
+                            <p>107% CDI</p>
+                        </div>
+
+                        <div class="form-floating">
+                            <textarea name="text" id="comment" cols="42" rows="1" class="form"
+                                placeholder="Comentários"></textarea>
+                            <label for="comment"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 p-2">
+            <!-- CARD -->
+            <div class="container dropdown text-start">
+                <button class="btn card-menu ps-0" data-bs-toggle="dropdown"><i
+                        class="fa-solid fa-ellipsis text-light"></i></button>
+                <ul class="dropdown-menu rounded-3">
+                    <li class="dropdown-item">Adicionar comentário</li>
+                    <li class="dropdown-divider">
+                        <hr> Adicionar comentário
+                    </li>
+                    <li class="dropdown-item bg-danger text-light rounded3">Dar baixa</li>
+                </ul>
+            </div><!-- CARD MENU -->
+            <div class="card container p-2 bg-light border border-4 rounded-3" data-bs-toggle="collapse"
+                data-bs-target="#demo4">
+                <!-- INNER CARD -->
+
+                <div class="inner-container ">
+                    <div class="description d-flex justify-content-between">
+                        <p class="text-black-50">Cdb - Lci's - Lca's</p>
+                        <p class="text-black-50">Itaú</p>
+                    </div>
+                    <div class="value d-flex justify-content-between">
+                        <h5>CDB Liquidez diária</h5>
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="inner-container f-flex flex-colum justify-content-center">
+                    <div class="description d-flex justify-content-between">
+                        <p class="text-black-50">Valor Investido:</p>
+                        <p>Vencimento:</p>
+                    </div>
+                    <div class="value d-flex justify-content-between">
+                        <h5 class="invested-amount rounded-3 border p-2">R$ 35.000,00</h5>
+                        <h5 class="text-danger">25/01/2023</h5>
+                    </div>
+                    <div class="text-center"><span><i class="fa-solid fa-sort-down text-center text-success"></i></span>
+                    </div>
+                </div>
+
+                <div id="demo4" class="collapse border">
+                    <!-- Collapse 2 Start -->
+
+                    <div class="inner-container">
+                        <!-- Collapse 2 End -->
+                        <div class="description d-flex justify-content-between">
+                            <p>Duração:</p>
+                            <p>Taxa:</p>
+                        </div>
+                        <div class="value d-flex justify-content-between">
+                            <h5>90 dias</h5>
+                            <p>107% CDI</p>
+                        </div>
+
+                        <div class="form-floating">
+                            <textarea name="text" id="comment" cols="42" rows="1" class="form"
+                                placeholder="Comentários"></textarea>
+                            <label for="comment"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 p-2">
+            <!-- CARD -->
+            <div class="container dropdown text-start">
+                <button class="btn card-menu ps-0" data-bs-toggle="dropdown"><i
+                        class="fa-solid fa-ellipsis text-light"></i></button>
+                <ul class="dropdown-menu rounded-3">
+                    <li class="dropdown-item">Adicionar comentário</li>
+                    <li class="dropdown-divider">
+                        <hr> Adicionar comentário
+                    </li>
+                    <li class="dropdown-item bg-danger text-light rounded3">Dar baixa</li>
+                </ul>
+            </div><!-- CARD MENU -->
+            <div class="card container p-2 bg-light border border-4 rounded-3" data-bs-toggle="collapse"
+                data-bs-target="#demo5">
+                <!-- INNER CARD -->
+
+                <div class="inner-container ">
+                    <div class="description d-flex justify-content-between">
+                        <p class="text-black-50">Cdb - Lci's - Lca's</p>
+                        <p class="text-black-50">Itaú</p>
+                    </div>
+                    <div class="value d-flex justify-content-between">
+                        <h5>CDB Liquidez diária</h5>
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="inner-container f-flex flex-colum justify-content-center">
+                    <div class="description d-flex justify-content-between">
+                        <p class="text-black-50">Valor Investido:</p>
+                        <p>Vencimento:</p>
+                    </div>
+                    <div class="value d-flex justify-content-between">
+                        <h5 class="invested-amount rounded-3 border p-2">R$ 35.000,00</h5>
+                        <h5 class="text-danger">25/01/2023</h5>
+                    </div>
+                    <div class="text-center"><span><i class="fa-solid fa-sort-down text-center text-success"></i></span>
+                    </div>
+                </div>
+
+                <div id="demo5" class="collapse border">
+                    <!-- Collapse 2 Start -->
+
+                    <div class="inner-container">
+                        <!-- Collapse 2 End -->
+                        <div class="description d-flex justify-content-between">
+                            <p>Duração:</p>
+                            <p>Taxa:</p>
+                        </div>
+                        <div class="value d-flex justify-content-between">
+                            <h5>90 dias</h5>
+                            <p>107% CDI</p>
+                        </div>
+
+                        <div class="form-floating">
+                            <textarea name="text" id="comment" cols="42" rows="1" class="form"
+                                placeholder="Comentários"></textarea>
+                            <label for="comment"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- end of clones -->
+        <!-- Modal Prototype -->
+
+        <!-- Novo Investimento Modal -->
+
+        <div class="modal" id="add-new-investment">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!-- modal header -->
+                        <h4 class="modal-title">Novo Investimento</h4>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <!-- Modal Body -->
+                        <form>
+                            <div class="mt-2">
+                                <label for="investment-type" class="text-black-50">Tipo:</label><select
+                                    name="investment-type" id="investment-type" class="form-select form-select-sm">
+                                    <option>Renda Fixa</option>
+                                    <option>Poupança</option>
+                                </select>
+                            </div>
+                            <div class="mt-2">
+                                <label for="description" class="text-black-50">Descrição: </label>
+                                <input id="description" class="form-control form-control-sm" type="text"
+                                    placeholder="Ex: CDB Liquidez diária"></input>
+                            </div>
+                            <div class="mt-2">
+                                <label for="invested-value" class="text-black-50">Valor: </label><input
+                                    class="form-control form-control-sm" id="invested-value" type="text"
+                                    placeholder="Ex: 65.123,80 (somente números)">
+                            </div>
+                            <div class="mt-2">
+                                <label for="bank" class="text-black-50 me-1">Banco: </label><select name="bank"
+                                    id="select-bank" class="form-control">
+                                    <option value="">Itau</option>
+                                    <option value="">Sofisa</option>
+                                    <option value="">Banco Inter</option>
+                                    <option value="">Bradesco</option>
+                                    <option value=""><a class="text-danger" href="#">+ Adicionar outro</a></option>
+                                </select>
+                            </div>
+                            <div class="mt-2">
+                                <label for="investment-date" class="text-black-50">Data: </label><input
+                                    class="form-control form-control-sm" type="date" name="investment-date"
+                                    id="investment-date">
+                            </div>
+                            <div class="mt-2">
+                                <label for="duration" class="text-black-50">Duração em dias: </label><input
+                                    class="form-control form-control-sm" type="text"
+                                    placeholder="Ex: 90 (somente números) " width="40px">
+                            </div>
+                            <div class="mt-2">
+                                <label class="text-black-50" for="tax-value">Taxa Contratada: </label>
+                                <input class="form-control form-control-sm" type="text"
+                                    placeholder="Ex: 107% CDI ou 4,7% aa">
+                            </div>
+                            <div class="mt-2">
+                                <label class="text-black-50" for="add-comments">Comentários: </label><textarea
+                                    class="form-control" id="add-comments" name="add-comments"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Modal Footer -->
+                    <div class="modal-footer">
+                        <!-- Modal Footer -->
+                        <button class="btn btn-success btn-cancel">
+                            Adicionar
+                        </button>
+                        <button class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+<footer>
+    <div class="copy mt-4 text-center text-light">
+        <p>Desenvolvido por Diogo Gaio&copy;</p>
+        <p><a><i class="fa-brands fa-github me-1"></i>Perfil Github</a></p>
+    </div>
+</footer>
+
+</html>

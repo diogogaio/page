@@ -1,2 +1,3 @@
-# agenda-telefonica
- Projeto simples criado baseado no aplicativo de contatos mobile
+# My projects
+ 
+Test projects for Javascript, HTML, Css, bootstrap 5, localStorage and Firebase pratices.
